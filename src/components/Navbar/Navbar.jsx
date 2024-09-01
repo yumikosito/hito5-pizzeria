@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 export default function Navbar() {
   const total = 25000;
-  const token = true;
+  const token = false;
   const totalFormat= new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'}).format(total)
 
   return (

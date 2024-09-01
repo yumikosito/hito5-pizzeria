@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Header from '../Header/Header'
 
 const RegisterPage = (base) => {
   const [email, setEmail] = useState("")
@@ -33,20 +34,24 @@ const RegisterPage = (base) => {
   
 
   return (
-    <div className='vw-100'>
-      <h3>Registro</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label> <br/>
-        <input type="text" id='email' name='email' value={email} required onChange={handleEmailChange}/>
-        <br/>
-        <label htmlFor="password">Contrasena</label><br/>
-        <input type="text" id='password' name='password' value={password} required onChange={handlePasswordChange}/>
-        <br/>
-        <label htmlFor="passConfirm" >Confirmacion Contrasena</label><br/>
-        <input type="text" id='passConfirm' name='passConfirm' value={passConfirm} required onChange={handlePassConfirmChange}/>
-        <br/>
-        <button type='submit' className="btn btn-info"> Enviar </button>
-      </form>
+    <div className='vw-100 d-flex align-items-center p-3 flex-column'>
+      <Header/>
+      <div className='mt-3'>
+        <h3>Registro</h3>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label> <br/>
+          <input type="text" id='email' name='email' value={email} required onChange={handleEmailChange}/>
+          <br/>
+          <label htmlFor="password">Contrasena</label><br/>
+          <input type="text" id='password' name='password' value={password} required onChange={handlePasswordChange}/>
+          <br/>
+          <label htmlFor="passConfirm" >Confirmacion Contrasena</label><br/>
+          <input type="text" id='passConfirm' name='passConfirm' value={passConfirm} required onChange={handlePassConfirmChange}/>
+          <br/>
+          <button type='submit' className="btn btn-info"> Enviar </button>
+        </form>
+      </div>
+
     </div>
   )
 }

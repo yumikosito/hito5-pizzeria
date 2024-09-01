@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-
+import Header from '../Header/Header'
 const LoginPage = (base) => {
   ;
   const [email, setEmail] = useState("")
@@ -34,17 +34,21 @@ const LoginPage = (base) => {
 
 
   return (
-    <div className='vw-100 m-0 p-0'>
-      <h3>Inicio Sesion</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label> <br/>
-        <input type="text" id='email' name='email' value={email} required onChange={handleEmailChange}/>
-        <br/>
-        <label htmlFor="password">Contrasena</label><br/>
-        <input type="text" id='password' name='password' value={password} required onChange={handlePasswordChange}/>
-        <br/>
-        <button type='submit' className="btn btn-info"> Enviar </button>
-      </form>
+    <div className='vw-100 d-flex align-items-center p-3 flex-column'>
+      <Header/>
+      <div className='mt-5'>
+        <h3>Inicio Sesion</h3>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label> <br/>
+          <input type="text" id='email' name='email' value={email} required onChange={handleEmailChange}/>
+          <br/>
+          <label htmlFor="password">Contrasena</label><br/>
+          <input type="text" id='password' name='password' value={password} required onChange={handlePasswordChange}/>
+          <br/>
+          <button type='submit' className="btn btn-info"> Enviar </button>
+        </form>
+      </div>
+
     </div>
   )
 }
